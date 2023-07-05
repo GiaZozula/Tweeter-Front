@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { disableReactDevTools } from '@fvilers/disable-react-devtools';
+
+// disabling react devtools for deployment
+if (process.env.NODE_ENV === 'production') disableReactDevTools()
 
 //connecting redux to react requires navigating to the root file (index.js, here!) 
 //first, importing provider from the react-redux package 
