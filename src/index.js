@@ -4,21 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
-
-// disabling react devtools for deployment
-if (process.env.NODE_ENV === 'production') disableReactDevTools()
-
 //connecting redux to react requires navigating to the root file (index.js, here!) 
 //first, importing provider from the react-redux package 
 import {Provider} from "react-redux";
 //second, importing the store 
 import {store} from "./redux/store";
 
-//now to make thing persistant...
+//now to make thing persist...
 //copied from Redux persist docs
 import { PersistGate } from "redux-persist/integration/react";
 //import the persistor we set up in store
 import { persistor } from './redux/store';
+
+// disabling react devtools for deployment
+if (process.env.NODE_ENV === 'production') disableReactDevTools();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

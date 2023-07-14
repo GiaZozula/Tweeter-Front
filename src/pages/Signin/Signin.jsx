@@ -80,7 +80,7 @@ const Signin = () => {
             onClick={handleLogin}
             className="text-xl py-2 rounded-full px-4 bg-blue-500 text-white"
          >Sign in</button>
-        <p className="text-xl text-center">Don't have an account?</p>
+        <p className="text-center text-xl">Don't have an account?</p>
         <input 
             onChange={(e) => setEmail(e.target.value)} 
             type="email" 
