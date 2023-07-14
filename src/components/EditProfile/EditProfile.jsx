@@ -55,7 +55,7 @@ const EditProfile = ({ setOpen }) => {
                 try {
                     console.log(downloadURL);
                     //wait to fetch the currentuser's id, then pass in the downloadURL into the profilePicture 
-                    const updateProfile = await axios.put(`/users/${currentUser._id}`, {
+                    await axios.put(`/users/${currentUser._id}`, {
                         profilePicture: downloadURL,
                     });
                 } catch (error) {
@@ -69,7 +69,7 @@ const EditProfile = ({ setOpen }) => {
 
     //async'd in order to reach the server at the same time
     const handleDelete = async () => {
-        const deleteProfile = await axios.delete(`/users/${currentUser._id}`);
+        await axios.delete(`/users/${currentUser._id}`);
         dispatch(logout());
         navigate("/signin");
   };
@@ -77,6 +77,7 @@ const EditProfile = ({ setOpen }) => {
 
     // if the image exists we upload the image that has been changed in the img state, we then fire off the useEffect to upload that img 
     useEffect(() => {
+         // eslint-disable-next-line react-hooks/exhaustive-deps
         img && uploadImg(img);
     }, [img]);
 

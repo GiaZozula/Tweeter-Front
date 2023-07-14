@@ -9,8 +9,7 @@ import Signin from "../Signin/Signin";
 // selector goes to the store and finds the state, doesn't make changes unlike dispatch, it just refers to the state
 // if there is a user's data inside the currentUser within the state, then we show the homepage, if not, we don't
 import {useSelector} from "react-redux";
-//and navigate functionality
-import { useNavigate } from "react-router-dom";
+
 
 
 

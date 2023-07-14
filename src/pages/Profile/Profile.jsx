@@ -41,7 +41,7 @@ const Profile = () => {
     const handleFollow = async () => {
         if(!currentUser.following.includes(id)) {
             try {
-                const follow = await axios.put(`/users/follow/${id}`, {
+                await axios.put(`/users/follow/${id}`, {
                     id: currentUser._id,
                 });
                 dispatch(following(id));
@@ -50,7 +50,7 @@ const Profile = () => {
             }
         } else {
             try {
-                const unfollow = await axios.put(`/users/unfollow/${id}`, {
+                await axios.put(`/users/unfollow/${id}`, {
                     id: currentUser._id,
                 });
                 dispatch(following(id));

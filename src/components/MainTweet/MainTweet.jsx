@@ -13,7 +13,7 @@ const MainTweet = () => {
         e.preventDefault();
         // this is where we post the tweets in to the database
         try {
-            const submitTweet = await axios.post("/tweets", {
+            await axios.post("/tweets", {
                 userId: currentUser._id,
                 description: tweetText,
             });
